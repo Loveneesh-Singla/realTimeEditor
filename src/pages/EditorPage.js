@@ -52,6 +52,7 @@ const EditorPage = () => {
                 }
             );
 
+
             // Listening for disconnected
             socketRef.current.on(
                 ACTIONS.DISCONNECTED,
@@ -105,10 +106,13 @@ const EditorPage = () => {
                     <h3>Connected</h3>
                     <div className="clientsList">
                         {clients.map((client) => (
+                            <>
+                                {console.log(client,"<====client")}
                             <Client
                                 key={client.socketId}
                                 username={client.username}
                             />
+                            </>
                         ))}
                     </div>
                 </div>
@@ -124,7 +128,7 @@ const EditorPage = () => {
                     socketRef={socketRef}
                     roomId={roomId}
                     onCodeChange={(code) => {
-                        codeRef.current = code;
+                        codeRef. current = code;
                     }}
                 />
             </div>
